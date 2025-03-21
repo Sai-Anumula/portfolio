@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Personal Portfolio - Sai Anumula</title>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: url('https://images.unsplash.com/photo-1512950050685-b1d4ae63d2df?fm=jpg&q=60&w=3000&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8cG9ydGZvbGlvJTIwYmFja2dyb3VuZHxlbnwwfHwwfHx8MA%3D%3D') no-repeat center center fixed;
+            background-size: cover;
+            color: black;
+            text-align: center;
+        }
+        header {
+            background: rgba(255, 255, 255, 0.9);
+            padding: 20px;
+            font-size: 28px;
+            font-weight: bold;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        nav {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 10px;
+        }
+        nav button {
+            padding: 10px 15px;
+            border: none;
+            cursor: pointer;
+            background: #007bff;
+            color: white;
+            border-radius: 5px;
+            font-size: 16px;
+            transition: background 0.3s;
+        }
+        nav button:hover {
+            background: #0056b3;
+        }
+        section {
+            display: none;
+            padding: 30px;
+            margin: 30px auto;
+            max-width: 900px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 15px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.5);
+        }
+        #about { display: block; }
+        .floating-btn {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: #007bff;
+            color: white;
+            padding: 14px 24px;
+            border-radius: 30px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: bold;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+        .floating-btn:hover {
+            background: #0056b3;
+            transform: scale(1.1);
+        }
+    </style>
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('section').forEach(section => {
+                section.style.display = 'none';
+            });
+            document.getElementById(sectionId).style.display = 'block';
+        }
+    </script>
+</head>
+<body>
+    <header>
+        Sai Anumula - Portfolio
+    </header>
+    <nav>
+        <button onclick="showSection('about')">About Me</button>
+        <button onclick="showSection('summary')">Summary</button>
+        <button onclick="showSection('skills')">My Skills</button>
+        <button onclick="showSection('internships')">Internships</button>
+        <button onclick="showSection('certifications')">Certifications</button>
+        <button onclick="showSection('projects')">Projects</button>
+        <button onclick="showSection('contact')">Contact Me</button>
+    </nav>
+    <section id="about">
+        <h2>About Me</h2>
+        <p><strong>Name:</strong> Sai Anumula</p>
+        <p><strong>Location:</strong> Vijayawada</p>
+        <p><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/sai-anumula" target="_blank">Sai Anumula</a></p>
+        <p><strong>GitHub:</strong> <a href="https://github.com/Sai-Anumula" target="_blank">Sai-Anumula</a></p>
+    </section>
+    <section id="summary">
+        <h2>Summary</h2>
+        <p>Enthusiastic Computer Science Engineering student with a solid foundation in programming, web development, and cloud technologies. Experienced in AI/ML, MERN stack development, and AWS Cloud. Passionate about solving real-world problems through innovative software solutions.</p>
+    </section>
+    <section id="skills">
+        <h2>My Skills</h2>
+        <ul>
+            <li>Java, C</li>
+<li>Html, CSS, Javascript</li>
+            <li>Basics of python</li>
+            <li>Full-Stack Development using java</li>
+            <li>Cloud Computing (AWS)</li>
+        </ul>
+    </section>
+    <section id="internships">
+        <h2>Internships</h2>
+        <ul>
+            <li><strong>Internship on AI & ML – APSSDC (May 2024 - June 2024)</strong><br>Gained hands-on experience in Artificial Intelligence (AI) and Machine Learning (ML). Worked on data preprocessing, model training, and evaluation techniques. Explored Python libraries like TensorFlow, Scikit-Learn, and Pandas for implementing ML algorithms.</li><br><br>
+            <li><strong>Internship on MERN Stack – Biztron Softech (June 2024 - July 2024)</strong><br>Developed full-stack web applications using the MERN (MongoDB, Express.js, React, Node.js) stack. Implemented features like user authentication, real-time chat, and dynamic content rendering. Gained experience in RESTful APIs, front-end development, and database management.</li>
+        </ul>
+    </section>
+    <section id="certifications">
+        <h2>Certifications</h2>
+        <ul>
+            <li>AWS Cloud Practitioner Certified (March 2025)</li><br><br>
+            <li>Salesforce AI Associate Certified(October 2024)</li>
+        </ul>
+    </section>
+<section id="projects">
+        <h2>Projects</h2>
+        <h3>Student Record Management System</h3>
+        <p>A simple C program that allows users to store, retrieve, and manage student records efficiently.</p>
+        <p><strong>Features:</strong></p>
+        <ul>
+            <li>Add new student records</li>
+            <li>Display all student records</li>
+            <li>Search for students by roll number</li>
+            <li>Delete student data</li>
+        </ul>
+        <p><a href="https://github.com/sai-anumula/StudentRecordManagement" target="_blank">View on GitHub</a></p>
+    </section>
+    </section>
+    <section id="contact">
+        <h2>Contact Me</h2>
+        <p>Email: <a href="mailto:saianumula1@gmail.com">saianumula1@gmail.com</a></p>
+        <p>LinkedIn: <a href="https://www.linkedin.com/in/sai-anumula" target="_blank">Sai Anumula</a></p>
+        <p>GitHub: <a href="https://github.com/Sai-Anumula" target="_blank">Sai-Anumula</a></p>
+    </section>
+    <button class="floating-btn" onclick="window.location.href='https://www.linkedin.com/in/sai-anumula';">Connect with Me</button>
+</body>
+</html>
