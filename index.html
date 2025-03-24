@@ -7,17 +7,18 @@
   <style>
     /* General Styles */
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      font-family: 'Comic Sans MS', cursive, sans-serif;
       margin: 0;
       padding: 0;
-      background-color: #f4f4f9;
+      background: linear-gradient(135deg, #9ad0ff, #d0e4ff, #d0e4ff);
       color: #333;
       line-height: 1.6;
     }
 
     a {
-      color: #0077b5;
+      color: #0057b5;
       text-decoration: none;
+      font-weight: bold;
     }
 
     a:hover {
@@ -32,27 +33,20 @@
 
     /* Header */
     header {
-      background: #0077b5;
+      background: #0077ff;
       color: #fff;
       padding: 40px 0;
       text-align: center;
-      animation: fadeInDown 1s ease-in-out;
+      border-bottom: 5px solid #0057b5;
     }
 
     header h1 {
-      margin: 0;
-      font-size: 2.5rem;
-      animation: fadeIn 2s ease-in-out;
+      font-size: 3rem;
+      animation: bounce 2s infinite;
     }
 
     header p {
-      margin: 10px 0 0;
-      font-size: 1.1rem;
-      animation: fadeIn 2.5s ease-in-out;
-    }
-
-    header a {
-      color: #fff;
+      font-size: 1.3rem;
     }
 
     /* Sections */
@@ -60,172 +54,69 @@
       background: #fff;
       margin: 20px 0;
       padding: 20px;
-      border-radius: 8px;
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-      animation: fadeInUp 1s ease-in-out;
+      border-radius: 15px;
+      box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s;
+    }
+
+    section:hover {
+      transform: scale(1.02);
     }
 
     section h2 {
-      margin-top: 0;
-      font-size: 1.8rem;
-      color: #0077b5;
-      border-bottom: 2px solid #0077b5;
-      padding-bottom: 10px;
-      animation: fadeInLeft 1s ease-in-out;
-    }
-
-    section h3 {
-      margin: 15px 0 5px;
-      font-size: 1.4rem;
-      color: #333;
-      animation: fadeInRight 1s ease-in-out;
-    }
-
-    section p {
-      margin: 5px 0;
-      animation: fadeIn 1.5s ease-in-out;
-    }
-
-    section ul {
-      list-style-type: disc;
-      padding-left: 20px;
-    }
-
-    section ul li {
-      margin: 5px 0;
-      animation: fadeIn 1.5s ease-in-out;
-    }
-
-    /* Skills Section */
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
+      color: #0057b5;
+      border-bottom: 3px dashed #0077ff;
+      padding-bottom: 5px;
     }
 
     .skills span {
-      background: #0077b5;
+      background: #0057b5;
       color: #fff;
-      padding: 5px 10px;
-      border-radius: 5px;
-      font-size: 0.9rem;
-      transition: transform 0.3s ease, background 0.3s ease;
+      padding: 10px 15px;
+      border-radius: 10px;
+      margin: 5px;
+      display: inline-block;
+      transition: 0.3s;
     }
 
     .skills span:hover {
-      transform: scale(1.1);
-      background: #005f8a;
+      background: #0077ff;
+      transform: rotate(10deg);
     }
 
-    /* Resume Button */
+    /* Buttons */
     .resume-button {
       display: inline-block;
-      background: #0077b5;
+      background: #0057b5;
       color: #fff;
-      padding: 10px 20px;
-      border-radius: 5px;
-      text-decoration: none;
-      transition: background 0.3s ease;
+      padding: 15px 25px;
+      border-radius: 10px;
+      font-size: 1.2rem;
+      transition: all 0.3s;
     }
 
     .resume-button:hover {
-      background: #005f8a;
-    }
-
-    .resume-button1 {
-      display: inline-block;
-      background: #0077b5;
-      color: #fff;
-      padding: 10px 20px;
-      border-radius: 5px;
-      text-decoration: none;
-      transition: background 0.3s ease;
-    }
-
-    .resume-button1:hover {
-      background: #005f8a;
+      background: #0077ff;
+      transform: scale(1.1);
     }
 
     /* Footer */
     footer {
       text-align: center;
-      padding: 20px 0;
-      background: #0077b5;
+      padding: 20px;
+      background: #0057b5;
       color: #fff;
-      margin-top: 20px;
-      animation: fadeInUp 1s ease-in-out;
-    }
-
-    footer p {
-      margin: 0;
+      font-weight: bold;
+      font-size: 1.2rem;
     }
 
     /* Animations */
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
-
-    @keyframes fadeInDown {
-      from {
-        opacity: 0;
-        transform: translateY(-20px);
-      }
-      to {
-        opacity: 1;
+    @keyframes bounce {
+      0%, 100% {
         transform: translateY(0);
       }
-    }
-
-    @keyframes fadeInUp {
-      from {
-        opacity: 0;
-        transform: translateY(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @keyframes fadeInLeft {
-      from {
-        opacity: 0;
-        transform: translateX(-20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-
-    @keyframes fadeInRight {
-      from {
-        opacity: 0;
-        transform: translateX(20px);
-      }
-      to {
-        opacity: 1;
-        transform: translateX(0);
-      }
-    }
-
-    /* Responsive Design */
-    @media (max-width: 768px) {
-      header h1 {
-        font-size: 2rem;
-      }
-
-      section h2 {
-        font-size: 1.5rem;
-      }
-
-      section h3 {
-        font-size: 1.2rem;
+      50% {
+        transform: translateY(-10px);
       }
     }
   </style>
@@ -337,7 +228,7 @@
     <section>
       <h2>Template Resume</h2>
       <p>Download my Template resume to learn more about my qualifications and experience.</p>
-      <a href="Sai-Template.pdf" download class="resume-button1">Download Resume</a>
+      <a href="Sai-Template.pdf" download class="resume-button">Download Resume</a>
     </section>
 
     <!-- Contact Me Section -->
