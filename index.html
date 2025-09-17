@@ -4,25 +4,29 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Anumula Sai - Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
   <style>
+    /* Custom Properties for Dark Theme */
+    :root {
+      --background-color: #121212;
+      --card-color: #1e1e1e;
+      --text-color: #e0e0e0;
+      --heading-color: #00ff99; /* Vibrant green accent */
+      --link-color: #00aaff;
+      --accent-color: #00ff99;
+      --shadow-color: rgba(0, 0, 0, 0.5);
+    }
+
     /* General Styles */
     body {
-      font-family: 'Comic Sans MS', cursive, sans-serif;
+      font-family: 'Montserrat', sans-serif;
       margin: 0;
       padding: 0;
-      background: linear-gradient(135deg, #9ad0ff, #d0e4ff, #d0e4ff);
-      color: #333;
+      background-color: var(--background-color);
+      color: var(--text-color);
       line-height: 1.6;
-    }
-
-    a {
-      color: #0057b5;
-      text-decoration: none;
-      font-weight: bold;
-    }
-
-    a:hover {
-      text-decoration: underline;
     }
 
     .container {
@@ -31,93 +35,158 @@
       padding: 20px;
     }
 
+    /* Links */
+    a {
+      color: var(--link-color);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease-in-out;
+    }
+
+    a:hover {
+      color: var(--accent-color);
+      text-decoration: underline;
+    }
+
     /* Header */
     header {
-      background: #0077ff;
-      color: #fff;
-      padding: 40px 0;
+      background-color: var(--card-color);
+      padding: 60px 0;
       text-align: center;
-      border-bottom: 5px solid #0057b5;
+      border-bottom: 2px solid var(--accent-color);
+      box-shadow: 0 4px 20px var(--shadow-color);
+      position: relative;
     }
 
     header h1 {
-      font-size: 3rem;
-      animation: bounce 2s infinite;
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin: 0;
+      color: var(--heading-color);
     }
 
     header p {
-      font-size: 1.3rem;
+      font-size: 1.1rem;
+      font-weight: 400;
+      margin-top: 5px;
+      color: var(--text-color);
     }
 
     /* Sections */
     section {
-      background: #fff;
-      margin: 20px 0;
-      padding: 20px;
-      border-radius: 15px;
-      box-shadow: 4px 4px 20px rgba(0, 0, 0, 0.1);
-      transition: transform 0.3s;
+      background: var(--card-color);
+      margin: 25px 0;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px var(--shadow-color);
+      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
     }
 
     section:hover {
-      transform: scale(1.02);
+      transform: translateY(-5px);
+      box-shadow: 0 8px 25px var(--shadow-color);
     }
 
     section h2 {
-      color: #0057b5;
-      border-bottom: 3px dashed #0077ff;
-      padding-bottom: 5px;
+      color: var(--heading-color);
+      font-size: 2rem;
+      font-weight: 600;
+      border-bottom: 2px solid var(--accent-color);
+      padding-bottom: 10px;
+      margin-top: 0;
+      margin-bottom: 20px;
+    }
+    
+    section h3 {
+      color: var(--text-color);
+      font-size: 1.3rem;
+      font-weight: 600;
+      margin-top: 25px;
+      margin-bottom: 5px;
+    }
+
+    section p {
+      font-size: 1rem;
+      margin: 0 0 10px 0;
+      color: var(--text-color);
+    }
+
+    /* Skills Section */
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 15px;
     }
 
     .skills span {
-      background: #0057b5;
-      color: #fff;
-      padding: 10px 15px;
-      border-radius: 10px;
-      margin: 5px;
-      display: inline-block;
-      transition: 0.3s;
+      background-color: var(--background-color);
+      color: var(--text-color);
+      padding: 10px 18px;
+      border-radius: 25px;
+      font-weight: 500;
+      transition: all 0.3s ease-in-out;
+      border: 1px solid var(--text-color);
     }
 
     .skills span:hover {
-      background: #0077ff;
-      transform: rotate(10deg);
+      background-color: var(--accent-color);
+      color: var(--background-color);
+      transform: scale(1.05);
+      border-color: var(--accent-color);
+    }
+
+    /* Lists */
+    ul {
+      list-style-type: none;
+      padding-left: 0;
+    }
+
+    ul li {
+      margin-bottom: 8px;
+      padding-left: 1.5em;
+      position: relative;
+    }
+    
+    ul li::before {
+      content: '»';
+      position: absolute;
+      left: 0;
+      color: var(--accent-color);
+      font-weight: bold;
     }
 
     /* Buttons */
     .resume-button {
       display: inline-block;
-      background: #0057b5;
-      color: #fff;
-      padding: 15px 25px;
-      border-radius: 10px;
-      font-size: 1.2rem;
-      transition: all 0.3s;
+      background-color: var(--accent-color);
+      color: var(--background-color);
+      padding: 15px 30px;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: 600;
+      transition: all 0.3s ease-in-out;
+      box-shadow: 0 4px 10px var(--shadow-color);
+      margin-right: 15px;
     }
 
     .resume-button:hover {
-      background: #0077ff;
-      transform: scale(1.1);
+      transform: translateY(-3px);
+      background-color: var(--link-color);
+      color: #fff;
+      box-shadow: 0 6px 15px var(--shadow-color);
     }
 
     /* Footer */
     footer {
       text-align: center;
       padding: 20px;
-      background: #0057b5;
-      color: #fff;
-      font-weight: bold;
-      font-size: 1.2rem;
-    }
-
-    /* Animations */
-    @keyframes bounce {
-      0%, 100% {
-        transform: translateY(0);
-      }
-      50% {
-        transform: translateY(-10px);
-      }
+      background-color: var(--card-color);
+      color: var(--text-color);
+      font-weight: 400;
+      font-size: 0.9rem;
+      margin-top: 30px;
+      border-top: 1px solid var(--text-color);
     }
   </style>
 </head>
@@ -135,29 +204,26 @@
   </header>
 
   <div class="container">
-    <!-- About Me Section -->
     <section>
       <h2>About Me</h2>
       <p>
         Hi, I'm Sai, a passionate and detail-oriented final-year Computer Science Engineering student at LBRCE College.
         I love exploring new technologies and solving real-world problems using my analytical and programming skills.
-        My expertise lies in Java, C, and JavaScript, and I'm always eager to learn more. I'm from Vijayawada, India,
+        My expertise lies in Java,C, and JavaScript, and I'm always eager to learn more. I'm from Vijayawada, India,
         and I enjoy working on projects that challenge me to grow both personally and professionally.
       </p>
     </section>
 
-    <!-- Education Section -->
     <section>
       <h2>Education</h2>
       <h3>B.Tech in Computer Science and Engineering (2023-Present)</h3>
-      <p>Lakireddy Bali Reddy College of Engineering, Mylavaram | CGPA: 8.4</p>
+      <p>Lakireddy Bali Reddy College of Engineering, Mylavaram | CGPA: 8.5</p>
       <h3>Diploma in Computer Science and Engineering (2020-2023)</h3>
       <p>AANM&VVRSR Polytechnic, Gudlavalleru | Overall Percentage: 85%</p>
       <h3>APSSC (High School) (2019-2020)</h3>
       <p>SVKMZP High School, Chandarlapadu | Percentage: 90%</p>
     </section>
 
-    <!-- Skills Section -->
     <section>
       <h2>Skills</h2>
       <div class="skills">
@@ -175,28 +241,31 @@
       </div>
     </section>
 
-    <!-- Internships Section -->
     <section>
       <h2>Internships</h2>
-       <h3>Internship on Full Stack Developer - Skill Dzire Techonologies pvt.ltd (May 2025 - June 2025)</h3>
+      <h3>Internship on Full Stack Developer - Skill Dzire Techonologies pvt.ltd (May 2025 - June 2025)</h3>
       <ul>
         <li>Developed and integrated web application modules using Java, HTML, CSS, JavaScript and MySQL.</li>
         <li>Developed a web-based mini-project using Java, JSP, Servlets, and MySQL for secure and efficient data handling.</li>
         <li>Focused on backend development, database connectivity, and user authentication to ensure data integrity and security.</li>
         <li>Enhanced problem-solving, full stack development skills, and understanding of real-world enterprise applications.</li>
-      </ul>
+        <li><a href="https://www.linkedin.com/posts/sai-anumula_java-fullstackdevelopment-internship-activity-7374000474703839232-XzIR?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEuJ9MwBmIrJEiG6DCnaUafFFZYJ4VBQGqs" target="_blank" class="certificate-button">View Certificate</a></li>
       </ul>
       <h3>Internship on AI & ML – APSSDC (May 2024 - June 2024)</h3>
       <ul>
         <li>Gained hands-on experience in Machine Learning algorithms, including regression, classification, and clustering techniques.</li>
         <li>Worked on AI model development, data preprocessing, and performance optimization using Python libraries like TensorFlow, Scikit-learn, and Pandas.</li>
         <li>Developed a mini-project applying ML concepts to real-world datasets, improving problem-solving and analytical skills.</li>
+        <li> <a href="https://www.linkedin.com/posts/sai-anumula_i-am-pleased-to-share-my-experience-from-activity-7289571378377216002-98e5?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEuJ9MwBmIrJEiG6DCnaUafFFZYJ4VBQGqs" target="_blank">View Certificate</a></li>
+
       </ul>
       <h3>Internship on MERN Stack – Biztron Softech (June 2024 - July 2024)</h3>
       <ul>
         <li>Developed a full-stack web application using MongoDB, Express.js, React, and Node.js (MERN Stack), focusing on both front-end and back-end development.</li>
         <li>Implemented user authentication, database management, and RESTful APIs, enhancing knowledge of React state management and server-side logic.</li>
         <li>Gained hands-on experience in deployment and version control using GitHub and cloud hosting platforms, improving collaboration and project management skills.</li>
+        <li><a href="https://www.linkedin.com/posts/sai-anumula_i-am-excited-to-share-my-internship-experience-activity-7289572812925628416-y8JS?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEuJ9MwBmIrJEiG6DCnaUafFFZYJ4VBQGqs" target="_blank">View Certificate</a></li>
+
       </ul>
       <h3>Workshop on Python – Brainovision (1 week)</h3>
       <ul>
@@ -206,7 +275,6 @@
       </ul>
     </section>
 
-    <!-- Achievements and Certifications -->
     <section>
       <h2>Achievements and Certifications</h2>
       <ul>
@@ -220,7 +288,6 @@
       </ul>
     </section>
 
-    <!-- Projects Section -->
     <section>
       <h2>Projects</h2>
       <h3>Student Record Management using C</h3>
@@ -229,9 +296,13 @@
       <p>Built a full-stack web application to manage sports attendance using PHP, HTML, CSS, and MySQL.</p>
     </section>
 
-   
+    <section>
+      <h2>Resume</h2>
+      <p>Download my resume to learn more about my qualifications and experience.</p>
+      <a href="Resume.pdf" download class="resume-button">Download Normal Resume</a>
+      <a href="Sai-Template.pdf" download class="resume-button">Download Template Resume</a>
+    </section>
 
-    <!-- Contact Me Section -->
     <section>
       <h2>Contact Me</h2>
       <p>Feel free to reach out to me via email or connect with me on LinkedIn and GitHub.</p>
@@ -243,7 +314,6 @@
     </section>
   </div>
 
-  <!-- Footer -->
   <footer>
     <div class="container">
       <p>&copy; 2025 Anumula Sai. All rights reserved.</p>
@@ -251,3 +321,4 @@
   </footer>
 </body>
 </html>
+
