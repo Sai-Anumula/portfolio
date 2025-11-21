@@ -1,324 +1,572 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Anumula Sai - Portfolio</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    /* Custom Properties for Dark Theme */
-    :root {
-      --background-color: #121212;
-      --card-color: #1e1e1e;
-      --text-color: #e0e0e0;
-      --heading-color: #00ff99; /* Vibrant green accent */
-      --link-color: #00aaff;
-      --accent-color: #00ff99;
-      --shadow-color: rgba(0, 0, 0, 0.5);
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anumula Sai - Portfolio | Full Stack & AI/ML</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&family=Playfair+Display:wght@700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        /* Custom Properties for Professional Dark Theme (Indigo/Gold) */
+        :root {
+            --background-color: #0d1117; /* GitHub Dark Base */
+            --card-color: #161b22; /* Slightly Lighter Card/Section Background */
+            --text-color: #c9d1d9; /* Light Gray for main text */
+            --heading-color: #ffffff; /* White for main headings */
+            --accent-color: #5c6bc0; /* Medium Indigo Accent (main color) */
+            --secondary-accent: #ffb300; /* Subtle Gold/Amber for highlights */
+            --link-color: #bbdefb; /* Very light blue for links */
+            --shadow-color: rgba(0, 0, 0, 0.7);
+        }
 
-    /* General Styles */
-    body {
-      font-family: 'Montserrat', sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: var(--background-color);
-      color: var(--text-color);
-      line-height: 1.6;
-    }
+        /* General Styles */
+        body {
+            font-family: 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: var(--background-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
 
-    .container {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 20px;
-    }
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 25px;
+        }
 
-    /* Links */
-    a {
-      color: var(--link-color);
-      text-decoration: none;
-      font-weight: 500;
-      transition: color 0.3s ease-in-out;
-    }
+        /* Links */
+        a {
+            color: var(--link-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s ease-in-out;
+        }
 
-    a:hover {
-      color: var(--accent-color);
-      text-decoration: underline;
-    }
+        a:hover {
+            color: var(--secondary-accent);
+        }
 
-    /* Header */
-    header {
-      background-color: var(--card-color);
-      padding: 60px 0;
-      text-align: center;
-      border-bottom: 2px solid var(--accent-color);
-      box-shadow: 0 4px 20px var(--shadow-color);
-      position: relative;
-    }
+        /* Navigation Bar */
+        .navbar {
+            background-color: var(--card-color);
+            box-shadow: 0 2px 10px var(--shadow-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            padding: 18px 0;
+            border-bottom: 1px solid #2d333b;
+        }
 
-    header h1 {
-      font-size: 3.5rem;
-      font-weight: 700;
-      margin: 0;
-      color: var(--heading-color);
-    }
+        .navbar .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
 
-    header p {
-      font-size: 1.1rem;
-      font-weight: 400;
-      margin-top: 5px;
-      color: var(--text-color);
-    }
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            font-weight: 900;
+            color: var(--accent-color);
+        }
 
-    /* Sections */
-    section {
-      background: var(--card-color);
-      margin: 25px 0;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 4px 15px var(--shadow-color);
-      transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-    }
+        .nav-links a {
+            color: var(--text-color);
+            margin-left: 30px;
+            font-family: 'Roboto', sans-serif;
+            font-weight: 400;
+            font-size: 1rem;
+            padding: 5px 0;
+            position: relative;
+        }
 
-    section:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 8px 25px var(--shadow-color);
-    }
+        .nav-links a::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 0;
+            height: 2px;
+            background-color: var(--secondary-accent);
+            transition: width 0.3s ease-in-out;
+        }
 
-    section h2 {
-      color: var(--heading-color);
-      font-size: 2rem;
-      font-weight: 600;
-      border-bottom: 2px solid var(--accent-color);
-      padding-bottom: 10px;
-      margin-top: 0;
-      margin-bottom: 20px;
-    }
-    
-    section h3 {
-      color: var(--text-color);
-      font-size: 1.3rem;
-      font-weight: 600;
-      margin-top: 25px;
-      margin-bottom: 5px;
-    }
+        .nav-links a:hover {
+            color: var(--secondary-accent);
+        }
+        
+        .nav-links a:hover::after {
+            width: 100%;
+        }
 
-    section p {
-      font-size: 1rem;
-      margin: 0 0 10px 0;
-      color: var(--text-color);
-    }
+        /* Hero Section */
+        .hero {
+            text-align: center;
+            padding: 120px 20px 80px 20px;
+            background: linear-gradient(135deg, var(--background-color) 0%, #161b22 100%);
+        }
 
-    /* Skills Section */
-    .skills {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 15px;
-    }
+        .hero h1 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            font-weight: 900;
+            margin: 0 0 15px 0;
+            color: var(--heading-color);
+            line-height: 1.1;
+        }
 
-    .skills span {
-      background-color: var(--background-color);
-      color: var(--text-color);
-      padding: 10px 18px;
-      border-radius: 25px;
-      font-weight: 500;
-      transition: all 0.3s ease-in-out;
-      border: 1px solid var(--text-color);
-    }
+        .hero h1 span {
+            color: var(--secondary-accent);
+        }
 
-    .skills span:hover {
-      background-color: var(--accent-color);
-      color: var(--background-color);
-      transform: scale(1.05);
-      border-color: var(--accent-color);
-    }
+        .hero p {
+            font-size: 1.3rem;
+            font-weight: 300;
+            margin-bottom: 40px;
+            max-width: 900px;
+            margin: 10px auto 40px auto;
+            color: var(--link-color); /* Lighter text for the description */
+        }
 
-    /* Lists */
-    ul {
-      list-style-type: none;
-      padding-left: 0;
-    }
+        .social-links a {
+            color: var(--text-color);
+            font-size: 2rem;
+            margin: 0 18px;
+            transition: color 0.3s, transform 0.3s;
+        }
 
-    ul li {
-      margin-bottom: 8px;
-      padding-left: 1.5em;
-      position: relative;
-    }
-    
-    ul li::before {
-      content: '»';
-      position: absolute;
-      left: 0;
-      color: var(--accent-color);
-      font-weight: bold;
-    }
+        .social-links a:hover {
+            color: var(--secondary-accent);
+            transform: scale(1.1);
+        }
 
-    /* Buttons */
-    .resume-button {
-      display: inline-block;
-      background-color: var(--accent-color);
-      color: var(--background-color);
-      padding: 15px 30px;
-      border-radius: 8px;
-      font-size: 1.1rem;
-      font-weight: 600;
-      transition: all 0.3s ease-in-out;
-      box-shadow: 0 4px 10px var(--shadow-color);
-      margin-right: 15px;
-    }
+        /* Sections */
+        section {
+            padding: 80px 0;
+        }
 
-    .resume-button:hover {
-      transform: translateY(-3px);
-      background-color: var(--link-color);
-      color: #fff;
-      box-shadow: 0 6px 15px var(--shadow-color);
-    }
+        .section-content {
+            background: var(--card-color);
+            margin: 30px 0;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px var(--shadow-color);
+            border-top: 5px solid var(--secondary-accent); /* Accent border maintained */
+            transition: transform 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+        }
+        
+        .section-content:hover {
+            transform: translateY(-5px);
+        }
 
-    /* Footer */
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: var(--card-color);
-      color: var(--text-color);
-      font-weight: 400;
-      font-size: 0.9rem;
-      margin-top: 30px;
-      border-top: 1px solid var(--text-color);
-    }
-  </style>
+        section h2 {
+            font-family: 'Playfair Display', serif;
+            color: var(--accent-color);
+            font-size: 2.8rem;
+            font-weight: 700;
+            text-align: center;
+            margin-bottom: 50px;
+            position: relative;
+        }
+
+        section h2::after {
+            content: '';
+            display: block;
+            width: 80px;
+            height: 4px;
+            background-color: var(--secondary-accent);
+            margin: 15px auto 0;
+            border-radius: 5px;
+        }
+
+        h3 {
+            font-family: 'Roboto', sans-serif;
+            color: var(--heading-color);
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-top: 30px;
+            margin-bottom: 10px;
+        }
+        
+        /* Education & Internships */
+        .data-item {
+            border-left: 4px solid var(--accent-color);
+            padding-left: 20px;
+            margin-bottom: 30px;
+            background-color: var(--background-color);
+            padding: 15px 20px;
+            border-radius: 4px;
+        }
+        .data-item p {
+            margin: 0;
+            font-size: 1rem;
+            color: var(--text-color);
+        }
+        .data-item h3 {
+            margin: 0 0 5px 0;
+            font-size: 1.3rem;
+            color: var(--secondary-accent); /* Gold for titles */
+        }
+        .data-item ul {
+            list-style-type: none;
+            padding-left: 0;
+            margin-top: 15px;
+        }
+        .data-item ul li {
+            margin-bottom: 8px;
+            position: relative;
+            padding-left: 20px;
+        }
+        .data-item ul li::before {
+            content: '•';
+            font-size: 1.5em;
+            color: var(--accent-color);
+            position: absolute;
+            left: 0;
+            top: -5px;
+        }
+        .certificate-link {
+            display: inline-block;
+            margin-top: 10px;
+            font-size: 0.95rem;
+            color: var(--link-color);
+            font-weight: 500;
+        }
+        .certificate-link i {
+            margin-right: 5px;
+        }
+
+
+        /* Skills Section */
+        .skills-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 20px;
+        }
+
+        .skill-badge {
+            background-color: var(--background-color);
+            color: var(--link-color);
+            padding: 10px 18px;
+            border-radius: 20px;
+            font-weight: 500;
+            font-family: 'Roboto', sans-serif;
+            transition: background-color 0.3s, color 0.3s;
+            border: 1px solid var(--accent-color);
+        }
+
+        .skill-badge:hover {
+            background-color: var(--accent-color);
+            color: var(--card-color);
+            transform: translateY(-2px);
+            border-color: var(--secondary-accent);
+        }
+
+        /* Projects Section */
+        .project-card {
+            background-color: var(--background-color);
+            padding: 30px;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            border: 1px solid #2d333b;
+            transition: box-shadow 0.3s, border-color 0.3s;
+        }
+
+        .project-card:hover {
+            border-color: var(--secondary-accent);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+
+        .project-card h3 {
+            margin-top: 0;
+            color: var(--secondary-accent);
+            border-bottom: 2px dotted #2d333b;
+            padding-bottom: 5px;
+        }
+
+        /* Achievements List */
+        .achievement-list {
+            list-style-type: none;
+            padding-left: 0;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+        }
+
+        .achievement-list li {
+            margin-bottom: 10px;
+            padding-left: 30px;
+            position: relative;
+            font-size: 1rem;
+        }
+        
+        .achievement-list li::before {
+            content: '\f02d';
+            font-family: 'Font Awesome 6 Free';
+            font-weight: 900;
+            position: absolute;
+            left: 0;
+            top: 0;
+            color: var(--accent-color);
+            font-size: 1.2rem;
+        }
+
+        /* Buttons */
+        .btn {
+            display: inline-block;
+            background-color: var(--secondary-accent); /* Swapped button accent to Gold */
+            color: var(--background-color);
+            padding: 12px 28px;
+            border-radius: 5px;
+            font-size: 1rem;
+            font-weight: 700;
+            font-family: 'Roboto', sans-serif;
+            transition: all 0.3s ease-in-out;
+            box-shadow: 0 4px 10px rgba(255, 179, 0, 0.3);
+            margin-top: 20px;
+            margin-right: 15px;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            background-color: var(--accent-color);
+            color: var(--card-color);
+            box-shadow: 0 6px 12px rgba(92, 107, 192, 0.4);
+        }
+
+        /* Contact Section */
+        #contact ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        #contact ul li {
+            display: flex;
+            align-items: center;
+            font-size: 1.1rem;
+        }
+        #contact ul li i {
+            color: var(--secondary-accent);
+            margin-right: 15px;
+            font-size: 1.5rem;
+            width: 25px;
+            text-align: center;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 30px 20px;
+            background-color: var(--card-color);
+            color: #777;
+            font-size: 0.9rem;
+            border-top: 1px solid #2d333b;
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <div class="container">
-      <h1>Anumula Sai</h1>
-      <p>
-        <a href="mailto:saianumula1@gmail.com">saianumula1@gmail.com</a> |
-        <a href="https://www.linkedin.com/in/sai-anumula" target="_blank">LinkedIn</a> |
-        <a href="https://github.com/Sai-Anumula" target="_blank">GitHub</a>
-      </p>
-      <p>Vijayawada, India</p>
-    </div>
-  </header>
 
-  <div class="container">
-    <section>
-      <h2>About Me</h2>
-      <p>
-        Hi, I'm Sai, a passionate and detail-oriented final-year Computer Science Engineering student at LBRCE College.
-        I love exploring new technologies and solving real-world problems using my analytical and programming skills.
-        My expertise lies in Java,C, and JavaScript, and I'm always eager to learn more. I'm from Vijayawada, India,
-        and I enjoy working on projects that challenge me to grow both personally and professionally.
-      </p>
-    </section>
+    <nav class="navbar">
+        <div class="container">
+            <div class="logo">A. Sai Portfolio</div>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#internships">Experience</a>
+                <a href="#skills">Skills</a>
+                <a href="#projects">Projects</a>
+                <a href="#achievements">Certifications</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
 
-    <section>
-      <h2>Education</h2>
-      <h3>B.Tech in Computer Science and Engineering (2023-Present)</h3>
-      <p>Lakireddy Bali Reddy College of Engineering, Mylavaram | CGPA: 8.5</p>
-      <h3>Diploma in Computer Science and Engineering (2020-2023)</h3>
-      <p>AANM&VVRSR Polytechnic, Gudlavalleru | Overall Percentage: 85%</p>
-      <h3>APSSC (High School) (2019-2020)</h3>
-      <p>SVKMZP High School, Chandarlapadu | Percentage: 90%</p>
-    </section>
+    <header class="hero">
+        <div class="container">
+            <h1>Hello, I'm <span>Anumula Sai</span>.</h1>
+            <p>
+                Final Year Computer Science Engineer | Full Stack Developer (Java) | AWS Certified.
+            </p>
+            <div class="social-links">
+                <a href="mailto:saianumula1@gmail.com" title="Email"><i class="fas fa-envelope"></i></a>
+                <a href="https://www.linkedin.com/in/sai-anumula" target="_blank" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/Sai-Anumula" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+            <a href=" " download class="btn">Download Resume </a>
+                 </div>
+    </header>
 
-    <section>
-      <h2>Skills</h2>
-      <div class="skills">
-        <span>Java</span>
-        <span>C</span>
-        <span>HTML</span>
-        <span>CSS</span>
-        <span>JavaScript</span>
-        <span>Python (Basics)</span>
-        <span>Windows</span>
-        <span>Ubuntu</span>
-        <span>Adaptability</span>
-        <span>Time Management</span>
-        <span>Communication</span>
-      </div>
-    </section>
+    <main class="container">
+        
+        <section id="about">
+            <h2>About Me & Education</h2>
+            <div class="section-content">
+                <p>
+                    Hi, I'm Sai, a passionate and detail-oriented "final-year Computer Science Engineering student" at LBRCE. My curiosity drives me to explore and master diverse technical fields, from "robust full-stack development (Java, MERN)" to the cutting edge of "AI and Machine Learning".
+                </p>
+                <p>
+                    I am eager to apply my strong analytical, problem-solving, and programming skills to create efficient, scalable, and secure real-world solutions. I thrive in environments that challenge me to grow both personally and professionally.
+                </p>
+                
+                <hr style="border-top: 1px solid #2d333b; margin: 30px 0;">
 
-    <section>
-      <h2>Internships</h2>
-      <h3>Internship on Full Stack Developer - Skill Dzire Techonologies pvt.ltd (May 2025 - June 2025)</h3>
-      <ul>
-        <li>Developed and integrated web application modules using Java, HTML, CSS, JavaScript and MySQL.</li>
-        <li>Developed a web-based mini-project using Java, JSP, Servlets, and MySQL for secure and efficient data handling.</li>
-        <li>Focused on backend development, database connectivity, and user authentication to ensure data integrity and security.</li>
-        <li>Enhanced problem-solving, full stack development skills, and understanding of real-world enterprise applications.</li>
-        <li><a href="https://www.linkedin.com/posts/sai-anumula_java-fullstackdevelopment-internship-activity-7374000474703839232-XzIR?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEuJ9MwBmIrJEiG6DCnaUafFFZYJ4VBQGqs" target="_blank" class="certificate-button">View Certificate</a></li>
-      </ul>
-      <h3>Internship on AI & ML – APSSDC (May 2024 - June 2024)</h3>
-      <ul>
-        <li>Gained hands-on experience in Machine Learning algorithms, including regression, classification, and clustering techniques.</li>
-        <li>Worked on AI model development, data preprocessing, and performance optimization using Python libraries like TensorFlow, Scikit-learn, and Pandas.</li>
-        <li>Developed a mini-project applying ML concepts to real-world datasets, improving problem-solving and analytical skills.</li>
-        <li> <a href="https://www.linkedin.com/posts/sai-anumula_i-am-pleased-to-share-my-experience-from-activity-7289571378377216002-98e5?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEuJ9MwBmIrJEiG6DCnaUafFFZYJ4VBQGqs" target="_blank">View Certificate</a></li>
+                <h3>Academic Journey</h3>
+                <div class="data-item">
+                    <h3>B.Tech in Computer Science and Engineering (2023-Present)</h3>
+                    <p><strong>Lakireddy Bali Reddy College of Engineering, Mylavaram</strong> | Current CGPA: 8.5</p>
+                </div>
+                
+                <div class="data-item">
+                    <h3>Diploma in Computer Science and Engineering (2020-2023)</h3>
+                    <p><strong>AANM&VVRSR Polytechnic, Gudlavalleru</strong> | Overall Percentage: 85%</p>
+                </div>
+                
+                <div class="data-item">
+                    <h3>APSSC (High School) (2019-2020)</h3>
+                    <p><strong>SVKMZP High School, Chandarlapadu</strong> | Percentage: 90%</p>
+                </div>
+            </div>
+        </section>
 
-      </ul>
-      <h3>Internship on MERN Stack – Biztron Softech (June 2024 - July 2024)</h3>
-      <ul>
-        <li>Developed a full-stack web application using MongoDB, Express.js, React, and Node.js (MERN Stack), focusing on both front-end and back-end development.</li>
-        <li>Implemented user authentication, database management, and RESTful APIs, enhancing knowledge of React state management and server-side logic.</li>
-        <li>Gained hands-on experience in deployment and version control using GitHub and cloud hosting platforms, improving collaboration and project management skills.</li>
-        <li><a href="https://www.linkedin.com/posts/sai-anumula_i-am-excited-to-share-my-internship-experience-activity-7289572812925628416-y8JS?utm_source=share&utm_medium=member_desktop&rcm=ACoAAEuJ9MwBmIrJEiG6DCnaUafFFZYJ4VBQGqs" target="_blank">View Certificate</a></li>
+        <section id="internships">
+            <h2>Professional Experience & Training</h2>
+            <div class="section-content">
+                
+                <div class="data-item">
+                    <h3>Full Stack Developer Intern - Skill Dzire Technologies pvt.ltd (May - Jun 2025)</h3>
+                    <p>"Focus:" Java, JSP, Servlets, MySQL</p>
+                    <ul>
+                        <li>Developed and integrated web application modules using Java, HTML, CSS, JavaScript, and MySQL.</li>
+                        <li>Created a web-based mini-project focusing on "backend development, database connectivity, and user authentication" for secure data handling.</li>
+                        <li>Enhanced understanding of real-world enterprise application structures and problem-solving within a full-stack environment.</li>
+                    </ul>
+                    <a href="https://www.linkedin.com/posts/sai-anumula_java-fullstackdevelopment-internship-activity-7374000474703839232-XzIR" target="_blank" class="certificate-link"><i class="fas fa-file-certificate"></i> View Certificate</a>
+                </div>
+                
+                <div class="data-item">
+                    <h3>MERN Stack Intern – Biztron Softech (Jun - Jul 2024)</h3>
+                    <p>"Focus:" MongoDB, Express.js, React, Node.js</p>
+                    <ul>
+                        <li>Developed a "full-stack web application" using the MERN Stack, focusing on both front-end (React state management) and back-end logic.</li>
+                        <li>Implemented "user authentication, database management, and RESTful APIs", gaining experience in server-side development.</li>
+                        <li>Utilized Git/GitHub and cloud hosting, improving version control and deployment skills.</li>
+                    </ul>
+                    <a href="https://www.linkedin.com/posts/sai-anumula_i-am-excited-to-share-my-internship-experience-activity-7289572812925628416-y8JS" target="_blank" class="certificate-link"><i class="fas fa-file-certificate"></i> View Certificate</a>
+                </div>
+                
+                <div class="data-item">
+                    <h3>AI & ML Intern – APSSDC (May - Jun 2024)</h3>
+                    <p>"Focus:" Machine Learning Algorithms, Python, Data Preprocessing</p>
+                    <ul>
+                        <li>Gained practical knowledge in "Machine Learning algorithms" (regression, classification, clustering).</li>
+                        <li>Worked on "AI model development, data preprocessing, and performance optimization" using Python libraries like Scikit-learn and Pandas.</li>
+                        <li>Developed a mini-project applying ML concepts to real-world datasets, enhancing analytical skills.</li>
+                    </ul>
+                    <a href="https://www.linkedin.com/posts/sai-anumula_i-am-pleased-to-share-my-experience-from-activity-7289571378377216002-98e5" target="_blank" class="certificate-link"><i class="fas fa-file-certificate"></i> View Certificate</a>
+                </div>
 
-      </ul>
-      <h3>Workshop on Python – Brainovision (1 week)</h3>
-      <ul>
-        <li>Learned core Python programming concepts, including data types, loops, functions, and object-oriented programming (OOP).</li>
-        <li>Worked on real-time projects involving data handling, file operations, and basic automation scripts.</li>
-        <li>Gained hands-on experience in libraries like NumPy and Pandas, enhancing problem-solving and coding efficiency.</li>
-      </ul>
-    </section>
+                <div class="data-item">
+                    <h3>Python Workshop – Brainovision (1 week)</h3>
+                    <p>Learned "core Python concepts", including OOP, data handling, and worked on real-time projects involving basic automation scripts using libraries like NumPy and Pandas.</p>
+                </div>
 
-    <section>
-      <h2>Achievements and Certifications</h2>
-      <ul>
-        <li>AWS Badge</li>
-        <li>AI Fundamentals Badge</li>
-        <li>"AWS Cloud Practitioner" Certified</li>
-        <li>"IoT" Certified in NPTEL</li>
-        <li>"Applied Accelerated Artificial Intelligence" certified in NPTEL</li>
-        <li>"Salesforce" Certified AI Associate</li>
-        <li>"Cyber Security" Certified in Capgemini</li>
-      </ul>
-    </section>
+            </div>
+        </section>
 
-    <section>
-      <h2>Projects</h2>
-      <h3>Student Record Management using C</h3>
-      <p>Developed a system to manage student records efficiently using C programming.</p>
-      <h3>Sports Attendance Management Full Stack using PHP</h3>
-      <p>Built a full-stack web application to manage sports attendance using PHP, HTML, CSS, and MySQL.</p>
-    </section>
+        <section id="skills">
+            <h2>Technical Toolbox</h2>
+            <div class="section-content">
+                <h3>Core Programming & Development</h3>
+                <div class="skills-grid">
+                    <span class="skill-badge">Java</span>
+                    <span class="skill-badge">C</span>
+                    <span class="skill-badge">JavaScript</span>
+                    <span class="skill-badge">Python (Basics)</span>
+                </div>
+                
+                <h3>Full Stack & Database</h3>
+                <div class="skills-grid">
+                    <span class="skill-badge">MERN Stack (React, Node.js, Express, MongoDB)</span>
+                    <span class="skill-badge">HTML5 & CSS3</span>
+                    <span class="skill-badge">PHP</span>
+                    <span class="skill-badge">MySQL</span>
+                    <span class="skill-badge">JSP & Servlets</span>
+                </div>
+                
+                <h3>Cloud & AI/OS</h3>
+                <div class="skills-grid">
+                    <span class="skill-badge">AWS Cloud</span>
+                    <span class="skill-badge">Machine Learning (ML)</span>
+                    <span class="skill-badge">Windows</span>
+                    <span class="skill-badge">Ubuntu</span>
+                </div>
+                
+                <h3>Soft Skills</h3>
+                <div class="skills-grid">
+                    <span class="skill-badge">Adaptability</span>
+                    <span class="skill-badge">Quick Learning</span>
+                    <span class="skill-badge">Time Management</span>
+                    <span class="skill-badge">Communication</span>
+                </div>
+            </div>
+        </section>
+        
+        <section id="projects">
+            <h2>Key Projects</h2>
 
-    <section>
-      <h2>Resume</h2>
-      <p>Download my resume to learn more about my qualifications and experience.</p>
-      <a href=" " download class="resume-button">Download Normal Resume</a>
-      <a href=" " download class="resume-button">Download Template Resume</a>
-    </section>
+            <div class="section-content">
+                <div class="project-card">
+                    <h3>Sports Attendance Management Full Stack (PHP, MySQL)</h3>
+                    <p>Built a robust full-stack web application designed to efficiently manage sports attendance, utilizing PHP for server-side logic, HTML/CSS for the interface, and MySQL for data persistence. This project demonstrates proficiency in standard web development architecture.</p>
+                </div>
+                
+                <div class="project-card">
+                    <h3>Student Record Management System (C)</h3>
+                    <p>Developed a console-based application to manage student records, emphasizing efficient data structures and fundamental programming logic in C language. This project highlights strong foundational programming skills.</p>
+                </div>
+                
+            </div>
+        </section>
 
-    <section>
-      <h2>Contact Me</h2>
-      <p>Feel free to reach out to me via email or connect with me on LinkedIn and GitHub.</p>
-      <ul>
-        <li><strong>Email:</strong> <a href="mailto:saianumula1@gmail.com">saianumula1@gmail.com</a></li>
-        <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/sai-anumula" target="_blank">linkedin.com/in/sai-anumula</a></li>
-        <li><strong>GitHub:</strong> <a href="https://github.com/Sai-Anumula" target="_blank">github.com/Sai-Anumula</a></li>
-      </ul>
-    </section>
-  </div>
+        <section id="achievements">
+            <h2>Key Certifications & Recognition</h2>
+            <div class="section-content">
+                <ul class="achievement-list">
+                    <li>"AWS Cloud Practitioner" Certified. (Includes AWS Badge)</li>
+                    <li>"Salesforce" Certified AI Associate. (Includes AI Fundamentals Badge)</li>
+                    <li>"Cyber Security" Certified in Capgemini.</li>
+                    <li>"Applied Accelerated Artificial Intelligence" certified in NPTEL.</li>
+                    <li>"IoT (Internet of Things)" Certified in NPTEL.</li>
+                </ul>
+            </div>
+        </section>
 
-  <footer>
-    <div class="container">
-      <p>&copy; 2025 Anumula Sai. All rights reserved.</p>
-    </div>
-  </footer>
+
+        <section id="contact">
+            <h2>Get In Touch</h2>
+            <div class="section-content">
+                <p>I am actively seeking roles and collaborations where I can leverage my diverse full-stack and AI/ML experience. Feel free to connect!</p>
+                <ul>
+                    <li><i class="fas fa-envelope"></i> <strong>Email:</strong> <a href="mailto:saianumula1@gmail.com">saianumula1@gmail.com</a></li>
+                    <li><i class="fab fa-linkedin"></i> <strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/sai-anumula" target="_blank">Sai Anumula</a></li>
+                    <li><i class="fab fa-github"></i> <strong>GitHub:</strong> <a href="https://github.com/Sai-Anumula" target="_blank">Sai-Anumula</a></li>
+                </ul>
+
+            </div>
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 Anumula Sai. All rights reserved. </p>
+        </div>
+    </footer>
 </body>
 </html>
-
